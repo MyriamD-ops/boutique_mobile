@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BoutiqueController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BoutiqueController::class,'index'])->name('boutique.index');
+Route::get('/detail/{id}', [BoutiqueController::class, 'show'])->name('detail');
